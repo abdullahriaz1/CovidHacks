@@ -1,0 +1,18 @@
+<h1>Guest Form</h1>
+<hr>
+<style>
+    body {background-color: powderblue;}
+    h1   {color: green;text-align:center;font-family:verdana}
+    h2   {color: green;text-align:center;font-family:verdana}
+    label {font-family:verdana;}
+    
+</style>
+<div class="container">
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+    </form>
+</div>
+<h2>When you submit you will be added to the event if you are eligible!</h2>
