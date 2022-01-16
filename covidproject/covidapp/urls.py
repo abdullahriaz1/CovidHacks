@@ -1,6 +1,6 @@
 from django.urls import include, path
 from rest_framework import routers
-from .views import GuestViewSet, EventViewSet, indexGuest, indexEvent, eventPage
+from .views import GuestViewSet, EventViewSet, indexGuest, indexEvent
 
 router = routers.DefaultRouter()
 router.register(r'guests', GuestViewSet)
@@ -13,9 +13,6 @@ urlpatterns = [
     path('guests', GuestViewSet),
     path('events', EventViewSet),
     path('guestPost', indexGuest),
-    path('eventPost', indexEvent),
-    path('eventPage', eventPage),
-    path('gvs', GuestViewSet.as_view()),
-    path('evs', EventViewSet.as_view()),
+    path('eventPost', indexEvent)
     
 ]

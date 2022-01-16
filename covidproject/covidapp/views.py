@@ -8,12 +8,12 @@ from covidapp.serializers import GuestSerializer, EventSerializer
 from covidapp.forms import GuestForm, EventForm
 from django.views.generic.list import ListView
     
-class GuestViewSet(ListView):
+class GuestViewSet(viewsets.ModelViewSet):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
     permission_classes = [permissions.IsAuthenticated]
     
-class EventViewSet(ListView):
+class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticated]

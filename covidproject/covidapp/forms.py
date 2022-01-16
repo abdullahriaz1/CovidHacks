@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Guest, Event, EventFinder
+from .models import Guest, Event
 
 class GuestForm(ModelForm):
 	class Meta:
@@ -9,9 +9,4 @@ class GuestForm(ModelForm):
 class EventForm(ModelForm):
     class Meta:
         model = Event
-        fields = '__all__'
-        
-class EventFinder(ModelForm):
-    class Meta:
-        model = EventFinder
         fields = '__all__'
