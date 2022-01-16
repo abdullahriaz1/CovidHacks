@@ -6,13 +6,14 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from covidapp.serializers import GuestSerializer, EventSerializer
 from covidapp.forms import GuestForm, EventForm
+from django.views.generic.list import ListView
     
-class GuestViewSet(viewsets.ModelViewSet):
+class GuestViewSet(ListView):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
     permission_classes = [permissions.IsAuthenticated]
     
-class EventViewSet(viewsets.ModelViewSet):
+class EventViewSet(ListView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -42,4 +43,6 @@ def indexEvent(request):
 	return render(request, 'app/indexEvent.html', context)
 
 def eventPage(request):
-    pass
+    if request.method == 'GET':
+        
+        return render(request, 'app/eventPage.html')

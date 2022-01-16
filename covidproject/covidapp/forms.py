@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Guest, Event
+from .models import Guest, Event, EventFinder
 
 class GuestForm(ModelForm):
 	class Meta:
@@ -11,3 +11,7 @@ class EventForm(ModelForm):
         model = Event
         fields = '__all__'
         
+class EventFinder(ModelForm):
+    class Meta:
+        model = EventFinder
+        fields = '__all__'

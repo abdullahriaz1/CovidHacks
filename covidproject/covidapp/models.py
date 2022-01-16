@@ -29,3 +29,9 @@ class Event(models.Model):
 
     class Meta:
         ordering = ['-name', '-description', '-date', '-address', '-county', '-state', '-numVaccinesRequired', '-recentTestRequired','-hostName','-hostEmail','-hostPhoneNumber','-eventCode']
+
+class EventFinder(models.Model):
+    code = models.CharField(default='',max_length=20)
+    
+    class Meta:
+        ordering = ['-code']
